@@ -16,6 +16,7 @@ git reflog
 
 git diff HEAD -- file		比较版本库和当前工作区的某文件的区别
 git checkout -- file            可以丢弃工作区的修改
+
 #########################################远程库
 git remote add origin git@github.com:michaelliao/learngit.git
 origin是远程库名（与远程对应的local的库）	：后面的是github上的库的名称（包含用户名）
