@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<body id="ID">
+<xmp>
+    DOCTYPE 声明了文档类型
+
+    位于标签 <html> 与 </html> 描述了文档类型
+
+    位于标签 <body> 与 </body> 为可视化网页内容
+
+    位于标签 <h1> 与 </h1>作为一个标题使用<h2>	<h3>	<h6>
+
+    位于标签 <p> 与 </p> 作为一个段落显示
+
+    <a href="http://www.runoob.com">这是一个链接</a>
+
+    <img src="w3cschool.png" width="104" height="142">
+
+    <br>
+
+    <hr>	水平线
+
+    <!--这是一个注释-->
+
+    <b>粗体	<strong>
+
+    <i>斜体	<em>
+
+    <sub>下标字
+
+    <sup>上标字
+
+</xmp>
+<br><br>
+<h2> head</h2>
+<xmp>
+    <head>中有：
+
+    <title>  定义了HTML文档的标题
+
+    <base>   定义了所有链接的URL <base href="...." target= >
+      _blank    _parent    _self    _top    framename
+
+    <link>   
+
+    <style>  
+    <meta>   素可提供有关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。
+    <meta charset="utf-8">
+    <script> 
+    <script src="" type="text/javascript">
+    </script>
+</xmp>
+<h2>html css</h2>
+<xmp>
+    <strong>CSS 可以通过以下方式添加到HTML中:<strong>
+
+	    <b>内联样式- 在HTML元素中使用"style" 属性
+	    内部样式表 -在HTML文档头部 <head> 区域使用<style> 元素 来包含CSS
+	    外部引用 - 使用外部 CSS 文件
+	    </b>
+    内联样式：
+		<body style="background-color:yellow;">
+		<h2 style="background-color:red;">这是一个标题</h2>
+		<p style="background-color:green;">这是一个段落。</p>
+		</body>
+    <p style="font-family:arial;color:red;font-size:20px;">
+    <h1 style="text-align:center;">	center  left  right
+    背景	字体	颜色	字体大小
+    对齐方式
+
+    <div style="opacity:0.5;position:absolute;left:50px;width:300px;height:150px;background-color:#40B3DF"></div>
+
+    opacity 不透明度
+
+    position 元素的定位类型 absolute(相对于static定位以外的第一个父元素进行定位) fixed(相对于浏览器窗口进行定位) relative static
+	left top right bottom
+    
+    float:left	float:right	
+
+</xmp>
+
+<h2>html image</h2>
+<xmp>
+    <img border="" src="" alt="" width="" height="">
+    border定义边框宽度
+    alt指定如果载入不成功的话的替代文本
+</xmp>
+
+<h2>html table</h2>
+<xmp>
+    <table>
+
+	<table border="1">
+	<tr>
+	<th>Header 1</th>
+	<th>Header 2</th>
+	</tr>
+	<tr>
+	<td>row 1, cell 1</td>
+	<td>row 1, cell 2</td>
+	</tr>
+	<tr>
+	<td>row 2, cell 1</td>
+	<td>row 2, cell 2</td>
+	</tr>
+	</table> 
+
+    <tr>定义一行
+
+    <td>定义一个单元格
+
+    <th>表格的表头（每一列的表头）
+
+    <caption>定义表格的标题
+</xmp>
+
+<h2>html列表</h2>
+<xmp>
+    无序列表 <ul>  <li>定义列表项
+
+	<ul>
+	<li>Coffee</li>
+	<li>Milk</li>
+	</ul> 
+
+    有序列表
+
+	<ol>
+	<li>Coffee</li>
+	<li>Milk</li>
+	</ol> 
+
+</xmp>
+
+<h2>html 区块</h2>
+<xmp>
+    <div>    </div>
+	<div style="">
+
+    <span> 用于对文档中的行内元素进行组合
+
+	 <p>我的母亲有 <span style="color:blue">蓝色</span> 的眼睛。</p> 
+
+</xmp>
+
+<h2>html 表单</h2>
+<xmp>
+    <form> </form>主要介绍输入信息
+    
+    文本域通过<input type="text"> 标签来设定，当用户要在表单中键入字母、数字等内容时，就会用到文本域。
+
+	<form>
+	First name: <input type="text" name="firstname"><br>
+	Last name: <input type="text" name="lastname">
+	</form> 
+
+    密码字段通过标签<input type="password"> 来定义:
+
+	<form>
+	Password: <input type="password" name="pwd">
+	</form> 
+
+    <input type="radio"> 标签定义了表单单选框选项
+
+	<form>
+	<input type="radio" name="sex" value="male">Male<br>
+	<input type="radio" name="sex" value="female">Female
+	</form> 
+
+    <input type="checkbox"> 定义了复选框. 用户需要从若干给定的选择中选取一个或若干选项。
+
+	<form>
+	<input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
+	<input type="checkbox" name="vehicle" value="Car">I have a car
+	</form> 
+    <input type="submit"> 定义了提交按钮.
+
+    当用户单击确认按钮时，表单的内容会被传送到另一个文件。表单的动作属性定义了目的文件的文件名。由动作属性定义的这个文件通常会对接收到的输入数据进行相关的处理。:
+
+	<form name="input" action="html_form_action.php" method="get">
+	Username: <input type="text" name="user">
+	<input type="submit" value="Submit">
+	</form> 
+</xmp>
+</body>
+</html>

@@ -1,0 +1,20 @@
+/etc/fstab    mount -a 自动挂载fstab中记录的分区
+
+mount [-t 文件系统] [-o 特殊选项] 设备名 挂载点
+
+文件系统：vfat(fat32)
+
+特殊选项：
+remount
+exec/noexec---可执行/不可执行
+rw/ro---------读写/只读
+
+umount卸载
+
+sr0
+sda:1/2/3/4
+sdb:
+
+
+fdisk -l
+

@@ -1,0 +1,58 @@
+git init
+
+git status
+git diff
+
+git add
+git rm
+git commit -m ""
+
+git log --graph		查看分支合并图
+git log 
+git log --pretty=oneline
+HEAD	HEAD^	HEAD^^	HEAD~100
+git reset --hard HEAD^
+git reflog
+
+git diff HEAD -- file		比较版本库和当前工作区的某文件的区别
+git checkout -- file            可以丢弃工作区的修改
+#########################################远程库
+git remote add origin git@github.com:michaelliao/learngit.git
+origin是远程库名（与远程对应的local的库）	：后面的是github上的库的名称（包含用户名）
+
+
+要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；
+关联后，使用命令git push -u origin master第一次推送master分支的所有内容；
+此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；
+git remote add origin git@github.com:michaelliao/learngit.git
+git pull <远程主机名> <远程分支名> :<本地分支名>
+git push <本地分支>: <远程主机名> <远程分支名>------------------如果分支有追踪关系，则分支名可以省略
+git clone git@github.com:michaelliao/learngit.git
+
+################################################分支管理
+git branch branchname
+git checkout branchname
+
+git checkout -b branchname	--------------相当于上面两个命令
+
+git merge ** 命令用于合并指定分支(**)到当前分支
+git branch -d dev	删除dev分支
+
+
+#############################################分支追踪关系
+在某些场合，Git会自动在本地分支与远程分支之间，建立一种追踪关系（tracking）。比如，在git clone的时候，所有本地分支默认与远程主机的同名分支，建立追踪关系，也就是说，本地的master分支自动"追踪"origin/master分支。
+
+Git也允许手动建立追踪关系。
+
+    git branch --set-upstream master origin/next
+
+上面命令指定master分支追踪origin/next分支。
+
+查看分支：git branch
+创建分支：git branch <name>
+切换分支：git checkout <name>
+创建+切换分支：git checkout -b <name>
+合并某分支到当前分支：git merge <name>
+删除分支：git branch -d <name>
+
+

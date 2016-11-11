@@ -1,0 +1,26 @@
+内置基本门
+
+多输入门：
+and nand nor or xor xnor
+
+多输出门：
+buf not
+
+三态门
+bufif0 bufif1 notif0 notif1
+
+tristate_gate[instance_name] ( out1, out2, control )
+
+pullup pulldown
+
+
+门时延
+上升时延、下降时延、to_x时延、截止时延
+#d
+#(d1,d2)-------d1/d2分别是上升和下降时延,to_x时延和截止时延是两者的最小值
+#(d1,d2,d3)----d1/d2分别是上升和下降时延,截止时延是d3，to_x时延是三者的最小值
+
+
+###########################实例数组
+wire [3:0] out, ina, inb;
+nand inst [3:0] ( out, ina, inb )

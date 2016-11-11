@@ -1,0 +1,15 @@
+XMP_wrapper
+
+entity *** is
+	port();
+end ***;
+architecture  @@@ of *** is
+	component $$ is
+	port();
+	end component $$;
+
+begin
+	$$_i:component $$;
+	  port map();
+
+end @@@

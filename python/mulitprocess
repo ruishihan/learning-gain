@@ -1,0 +1,18 @@
+class Process
+	start()
+	jion()
+	terminate()
+Pool()
+Queues()	get()	put()
+Lock()
+cpu_count()
+current_process()
+
+class Pool
+	map()
+	imap()
+	pool.apply_async(func,(index,))	非阻塞逐个添加进程
+	pool.apply(func,(index,))	阻塞逐个添加进程
+	pool.join()
+	pool.close()	pool.terminate()
+	pool.map(func,index_list)

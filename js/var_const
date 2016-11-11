@@ -1,0 +1,44 @@
+num
+	123; // 整数123
+	0.456; // 浮点数0.456
+	1.2345e3; // 科学计数法表示1.2345x1000，等同于1234.5
+	-99; // 负数
+	NaN; // NaN表示Not a Number，当无法计算结果时用NaN表示
+	Infinity; // Infinity表示无限大
+	0xffff;
+	true	false
+比较运算符：
+	==
+	===
+
+
+array	var arr = [1, 2, 3.14, 'Hello', null, true];
+	indexOf()
+	slice()
+
+		arr.slice(0, 3); // 从索引0开始，到索引3结束，但不包括索引3: ['A', 'B', 'C']
+		arr.slice(3); // 从索引3开始到结束: ['D', 'E', 'F', 'G']
+
+	push()	pop()
+	如果要往Array的头部添加若干元素，使用unshift()方法，shift()方法则把Array的第一个元素删掉
+	sort()
+	reverse()
+	splice()方法是修改Array的“万能方法”，它可以从指定的索引开始删除若干元素，然后再从该位置添加若干元素
+	splice(index,num_to_delete,'add1','add2',……)
+	concat()方法把当前的Array和另一个Array连接起来，并返回一个新的Array;请注意，concat()方法并没有修改当前Array，而是返回了一个新的Array。
+	join()方法是一个非常实用的方法，它把当前Array的每个元素都用指定的字符串连接起来，然后返回连接后的字符串
+
+字符串:''	""	``(多行字符串)	\转译符
+	多个字符串的连接 +
+	模板字符串${string_name}
+	**字符串是不可变的**
+	toUpperCase()	toLowerCase()	indexOf()	substring()
+
+
+对象：JavaScript的对象是一组由键-值组成的无序集合；avaScript对象的键都是字符串类型，值可以是任意数据类型。
+
+	如果我们要检测xiaoming是否拥有某一属性，可以用in操作符：
+
+--------------------------
+var
+这种变量本身类型不固定的语言称之为动态语言，与之对应的是静态语言

@@ -1,0 +1,34 @@
+fd
+0-------stdin
+1-------stdout
+2-------stderr
+
+
+redirect stdout
+>
+
+>>
+
+redirect stdin
+<
+<<
+
+j<>fname ----------以文件标识符j创建fname
+pipeline
+|
+管道符
+
+
+cat	显示文件内容;wait for input from the keyboard.
+uniq	省略重复行
+grep	打印匹配行
+wc	打印文件中的换行符、字和字节个数
+head	输出文件第一部分
+tail	输出文件最后一部分
+
+the following commands are different.
+command 2>&1 1>fname
+command 1>fname 2>&1
+
+
+

@@ -1,0 +1,30 @@
+function abs(x) {
+    if (x >= 0) {
+        return x;
+    } else {
+        return -x;
+    }
+}
+
+由于JavaScript的函数也是一个对象，上述定义的abs()函数实际上是一个函数对象，而函数名abs可以视为指向该函数的变量。
+
+因此，第二种定义函数的方式如下：
+
+var abs = function (x) {
+    if (x >= 0) {
+        return x;
+    } else {
+        return -x;
+    }
+};
+
+
+arguments参数
+
+rest参数
+	unction foo(a, b, ...rest) {
+	    console.log('a = ' + a);
+	    console.log('b = ' + b);
+	    console.log(rest);
+	}
+rest参数只能写在最后，前面用`...`标识，从运行结果可知，传入的参数先绑定a、b，多余的参数以数组形式交给变量rest，所以，不再需要arguments我们就获取了全部参数。

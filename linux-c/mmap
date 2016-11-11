@@ -1,0 +1,7 @@
+void* mmap(void* start, size_t length, int prot, int flags, int fd, off_t offsize);
+start设置为NULL表示让系统自动选定地址
+size代表将文件中多大的部分对应到内存
+prot代表映射区域的保护方式
+fd代表欲映射到内存的文件
+offset文件的偏移量，代表从文件的offset处开始映射
+

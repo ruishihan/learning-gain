@@ -1,0 +1,50 @@
+proc文件系统是一个虚拟文件系统，可以用作系统内核数据结构的接口，以便用户获取进程状态以及可调参数等信息，而不必直接读取或解释/dev/kmem核心内存文件
+
+进程内存映像文件
+每个数字表示对应pid的进程
+cmdline
+cwd	在cwd目录下运行/bin/pwd可以查询当前进程的工作目录（不能直接pwd，而必须调用外部的/bin/pwd）
+environ	进程运行环境的变量设置
+
+exe	
+
+……
+
+系统配置信息
+当前系统硬件设备的配置信息
+
+/proc/cpuinfo
+/proc/filesystems
+/proc/iomem	I/O内存映射
+/proc/partitions	磁盘分区，类似于 fdisk -l
+/proc/modules	包含已经加载到系统内核的 所有模块列表，相当于lsmod
+/proc/mounts	提供系统当前安装的所有文件系统信息
+/proc/version	操作系统信息
+
+
+系统运行状态
+/proc/cmdline
+/proc/kcore	系统物理内存的映像
+/proc/kmsg	系统内核产生的信息
+/proc/loadavg	
+/proc/meminfo	内存使用情况，同free
+/proc/stat	自最近一次系统启动以来，系统内核的各种统计信息vmstat iostat
+/proc/swaps	包含交换区存储空间的配置及使用情况
+/proc/uptime	
+/proc/vmstat
+
+
+
+
+系统可调参数	/proc/sys
+
+/proc/sys/fs	文件系统可调参数
+	./file-max	系统范围内所有进程能够打开的文件数量
+	./file-nr	只读文件，已分配fd数量、空闲fd数量、fd最大数量
+	./inode-state	
+
+/proc/sys/kernel	系统内核可调参数
+	./msgmax	
+	./shmall
+	./sem
+	./net/ipv4

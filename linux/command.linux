@@ -1,0 +1,20 @@
+mkdir -p [目录名] 
+-p 表示递归创建
+cd 
+pwd
+rmdir 只能删除空白目录
+
+rm -r -f
+-r 删除目录
+-f 强制，不询问
+
+cp -r fromfile tofile
+-r表示删除目录
+-p 连带文件属性复制
+-d 若源文件是链接文件，则复制链接属性
+-a 相当于-pdr
+
+mv 
+不能加-r,文件和目录都用mv 复制，没有-r选项
+
+touch

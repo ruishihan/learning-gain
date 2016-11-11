@@ -1,0 +1,20 @@
+用户定义原语
+primitive UDP_name ( output, list_of_inputs )
+  output_declaration
+  list_of_input_declaration
+  [reg_declaration]
+  [initial_statement]
+  table
+    list_of_table_entries
+  endtable
+endprimitive
+
+
+
+UDP只能有一个输出和一个或多个输入。
+
+UDP的table中，
+线网型输入在前，输出在后，中间用：隔开；
+寄存器型变量的现在状态在前，next状态在后，中间用：隔开；
+用边沿触发时（10）（01）表示下跳和上跳；
+？表示不关心，-表示不变，

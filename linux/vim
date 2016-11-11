@@ -1,0 +1,49 @@
+底行模式（带:的实际是ex命令）
+:w
+:w filename
+:w! filename	强制保存到filename中，如果文件已经存在则覆盖
+:q
+:!
+:ls
+:n
+:N
+:15
+:/xxxxxx
+:?xxxxxx
+
+命令模式
+修改与替换
+[n]dw
+[n]dd
+[n]yy
+p
+P
+cw
+[n]cc
+[n]s
+~	转换大小写
+
+
+0	把光标移至当前行的起始位置
+
+
+o	在下方插入数据
+O	在上方插入数据
+a	从光标之后输入数据
+A	在当前行的行尾输入数据
+i
+I	在当前行的行首输入数据
+
+
+ex命令：
+:set nu	显示行号
+:set nonu
+:line#1,line#2 co line#3	行复制	.表示当前行	$表示文件尾
+:line#1,line#2 m line#3		行移动
+:line#1,line#2 d		行删除
+
+替换字符串
+:[g]/search-string/s//replace-string/[g][c]
+
+合并文件与合并文本行
+:line# r filename

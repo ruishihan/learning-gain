@@ -1,0 +1,43 @@
+TCP/UDP
+tcp的数据头包括发送和接收端口号、数据段的顺序号及校验和等
+udp的数据头包括发送和接收端口号、分组数据长度及校验和等
+
+udp发送进程只管尝试向接收主机的udp进程发送分组数据，由应用层确定udp接收进程是否已经确实收到了分组数据。
+
+
+网络接口设置
+ubuntu采用/etc/network/interfaces配置文件定义每一个网络接口；系统启动脚本/etc/init.d/networking利用ifup和ifdown命令，根据配置文件中的定义，启动和关闭系统的网络功能。
+
+sudo /etc/init.d/networking restart
+
+上述脚本利用ifup和ifdown重启,而ifup/ifdown命令底层采用的是ip	ifconfig	route等命令
+
+ip
+
+ifconfig	-a显示所有网络接口	up	down	netmask
+
+route
+
+
+ADSL网络连接
+pppoeconf
+
+
+
+当网络中的所有主机均位于同一网段时，通过IP地址和主机名，系统之间可以随意进行访问；如果不在一个网段则需要通过网关或路由器进行访问。
+
+
+route命令设置路由
+route [-A family]	add|del		[-net|-host|default] target  	 [netmask NM] 	  [gw GW] 	 [[dev] if]
+
+
+#########################################配置网络服务：
+inetd是监视一些网络请求的守护进程
+/etc/inetd.conf配置文件，它保存了系统提供internet服务的数据库。通过这个文件，你可以对这些服务加以控制，如打开/关闭某项服务，使它们更为安全的运行等等很多。
+
+文件格式如下：
+<service_name> <sock_type> <proto> <flags> <user> <server_path> <args>
+
+flags 为wait/nowait
+sock_type	stream/dgram/raw/rdm/seqpacket
+proto		tcp/udp	还可以定义发送和接收套接字缓冲区的大小

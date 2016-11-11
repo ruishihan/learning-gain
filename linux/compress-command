@@ -1,0 +1,17 @@
+.zip         zip 压缩文件名  原文件名     -r 压缩目录
+             unzip
+.gz          gzip 原文件名          原文件会消失
+             gzip -c *** >****.gz 
+             gzip -r 是将目录下的文件逐个压缩
+             gunzip -r
+.bz2         bzip2不能压缩目录，不保留原文件，要想保留原文件，需要加-k
+             bzip2 -d 解压
+             bunzip2 解压缩 
+.tar.gz      
+.tar.bz2
+
+     tar -cvf
+     tar -zcvf
+     tar -jcvf
+     tar -xzvf
+     tar -xjvf

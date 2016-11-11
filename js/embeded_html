@@ -1,0 +1,37 @@
+<html></html>
+<head></head>
+<script></script>
+<body></body>
+<script src=""></script>
+<script type="text/javascript"></script>
+
+<html>
+<head>
+  <script>
+    alert('Hello, world');
+  </script>
+</head>
+<body>
+  ...
+</body>
+</html>
+
+
+第二种方法是把JavaScript代码放到一个单独的.js文件，然后在HTML中通过<script src="..."></script>引入这个文件：
+
+<html>
+<head>
+  <script src="/static/js/abc.js"></script>
+</head>
+<body>
+  ...
+</body>
+</html>
+
+有些时候你会看到<script>标签还设置了一个type属性：
+
+<script type="text/javascript">
+  ...
+</script>
+
+但这是没有必要的，因为默认的type就是JavaScript，所以不必显式地把type指定为JavaScript。

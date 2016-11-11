@@ -1,0 +1,13 @@
+在用yocto生成r7-zynq7内核时，要注意版本控制，最后是用jethro 分支中的poke 和meta-xilinx来做成的
+
+poke包是yocto运行的基本包，里面已经包含了openembedded-core包，无须再下载openembedded-core包，在只有poke包的情况下，可以跑一些默认班子的bitbake。
+
+meta-xilinx包中含有部分标准的xilinx开发板的硬件信息和conf文件，在加入meta-xilinx的情况下，可以跑这些开发板的bitbake，要把meta-xilinx添加到bblayer.conf中的路径中。
+
+但r7是自定义的板子，如果想生成r7的内核，就要打补丁，打补丁要将r7的硬件信息和定义文件添加到meta-xilinx的相应位置，注意一定要在meta-xilinx目录下运行patch，而且一定要有 -p1选项，否则文件添加的位置不是正确的位置，会导致提示
+machine invalid。就是说没有找到对应的r7的定义文件。
+
+source是将poke 目录下的 oe-init-build-env文件运行，以配置环境变量。重启电脑后，环境变量需要重新设置。
+
+yocto 的定制：库文件的包含、软件的添加等？？？？？？？？
+

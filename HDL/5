@@ -1,0 +1,33 @@
+if----elseif----else
+Verilog HDL中将else与最近的没有else 的if 相关联。。。。
+
+
+case (case-expr)
+  case_item1 : ....
+  ...
+  default : ....
+endcase
+
+
+forever 
+    procedural_statement
+
+
+repeat (loop_count)
+   statement
+
+
+while ( condition )
+    statement
+
+
+for( initial_assignment; conditon; step_assignment )
+    statement
+
+####################过程性连续赋值-----通过特定的处理，使得过程性赋值具有了一定程度上的连续性？
+赋值和强制语句在以下意义上是“连续”的：即当赋值或强制发生效用时，右端表达式中操作数的任何变化都会引起赋值语句的重新执行。
+
+1)赋值和重新赋值过程语句------assign....deassing
+
+
+2)强制和释放过程性赋值语句----force.....release

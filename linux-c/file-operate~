@@ -1,0 +1,74 @@
+	FILE* fopen(const char* path, const char* mode)
+	fread (buffer, size, count, fp)
+	fclose()
+
+	feof()
+
+
+	fscanf(file,"%s %x,%x\n",dev,&offset,&length)
+%s	%c	%d	%u	%x	%o	%f
+从流中执行格式化输入，遇到空格和换行结束，返回值是表示读入的参数的个数,file可以是stdin,表示从键盘输入
+	fprintf(FILE* stream , const char* format, ……)
+
+
+
+	fgets( char* buf, int size, FILE* stream )
+读指定长度的字符串
+	fgetc(FILE* stream)
+读一个字符
+
+	fseek()---------int fseek( FILE* stream , long offset, int whence )
+fseek 返回值是 0或 -1, fseek()不像lseek()会返回读写位置, 因此必须使用ftell()来取得目前读写的位置.
+
+	lseek()---------off_t fseek( FILE* stream , long offset, int whence )
+
+	fsync()---------int fsync( int fd )
+fsync()负责将一个文件描述符（什么是文件描述符，它是unix、类unix系统打开文件的一种方式，应该相当于打开文件的一个句柄一样）打开的文件写到物理设备，而且是真正的同步写，没有写完成就不会返回
+	fflush()--------int fflush( FILE* stream )
+fflush()用于清空文件缓冲区，如果文件是以写的方式打开 的，则把缓冲区内容写入文件。
+
+	dup()-----------int dup( int oldfd )
+dup()用来复制参数oldfd 所指的文件描述词, 并将它返回. 此新的文件描述词和参数oldfd 指的是同一个文件, 共享所有的锁定、读写位置和各项权限或旗标.
+
+	dup2()----------int dup2( int oldfd , int newfd)
+dup2()与dup()不同的是，dup2()可以指定新fd的标号（复制内容在表中的存放位置）
+
+
+	void *mmap(void *start, size_t length, int prot, int flags, int fd, off_t offsize);---------#include<unistd.h> <sys/mman.h>
+
+	ioctl()------------?????????????????????????????????????
+
+	getattr()
+	setattr()
+#####################################################read/write实现用户态和内核态的转换；fwrite是将数据从app buffer复制到CLib buffer，调用fclose时才会把数据刷新到磁盘，此外还可以通过fflush(到page cache),然后 fsync(page cache-->磁盘)。。。。
+write只会使数据到达page cache，何时向下传递由内核IO调度决定，因此是个异步调用，可以在open文件时带上O_SYNC来实现同步。
+
+	read(fd,&reg,count)------------#include <unistd.h>
+返回读取的字节数
+
+	write(file,&reg,sizeof(reg))--#include <unistd.h>
+返回写入文件的字节数
+
+	open(const char* pathname, int flags, int perms)------------------------#include <fcntl.h> <sys/types.h> <sys/stat.h> <unistd>
+flags:文件打开方式
+O_RDONLY
+O_WRONLY
+O_RDWR
+O_CREAT------------------如果该文件不存在，就创建一个新文件，并用第三个参数为其设置权限
+O_EXCL-------------------如果使用O_CREAT时文件存在，则返回错误信息。这一参数可测试文件是否存在
+perms:被打开文件的存取权限
+O_SYNC
+
+
+	close(fd)-----------------------#include <fcntl.h>
+
+	usleep()-----基本单位是千分之一毫秒
+	unlink()-----int unlink( const char* pathname )    减少指向文件的连接，当减到0时，删除文件
+
+	llseek(file,offset, whence)
+whence有以下选项：
+SEEK_SET/0:将读写位置指向文件头后 再增加offset
+SEEK_CUR/1:当前位置，再增加offset
+SEEK_END/2:文件尾再增加offset
+llseek的返回值是移动以后的位置（相对于文件头）
+

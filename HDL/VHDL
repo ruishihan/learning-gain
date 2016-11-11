@@ -1,0 +1,112 @@
+Constant
+Variable
+Signal
+
+定义语句
+赋值语句
+
+数据类型：
+	Boolean
+	bit
+	bit_vector
+	character
+	string
+	integer
+	real
+	time
+
+	std_logic
+	std_logic_vector
+使用Std_Logic和 Std_Logic_Vector要调用IEEE库中的Std_Logic_1164程序包;就综合而言,能够在数字器件中实现的是“-、0、1、Z”四种状态。
+
+TYPE 数据类型名 IS 数据类型定义 OF 基本数据类型或 TYPE 数据类型名 IS 数据类型定义
+SUBTYPE 子类型名 IS 基本数据类型定义 RANGE 约束范围
+
+取余运算 REM
+取模运算 MOD
+
+###########################################################################################################################
+entity	实体描述了设计单元的输入输出接口信号或引脚,是设计实体经封装后对外的一个通信界面。
+in	out	inout	buffer	当有输出反馈时，必须为 buffer，不能为 out
+
+
+architecture	结构体定义了设计单元具体的功能,描述了该基本设计单元的行为、元件和内部的连接关系。
+
+
+########################################################################
+并行语句
+	并行赋值：	简单赋值
+			选择信号赋值	with 选择表达式 select
+					赋值目标信号<=表达式1 when 条件1,
+			
+			条件信号赋值	赋值目标信号<=表达式1 when 条件1 else,
+					***				else,
+						表达式;
+
+#########################################################################
+
+进程语句				进程语句对应于verilog中的行为描述
+
+	上升沿描述:Clock’ EVENT AND Clock=‘1’
+	下降沿描述:Clock’ EVENT AND Clock=‘0’
+	上升沿描述: rising_edge (Clock)
+	下降沿描述: falling_edge (Clock)
+进程：进程本身是并行语言，但内部是顺序语言；进程只有在特定的时刻（敏感信号发生变化）才会被激活。。
+[进程标号:] PROCESS (敏感信号参数表)
+[声明区];
+BEGIN
+顺序语句
+END PROCESS [进程标号];
+
+当 process 的敏感信号参数表重没有列出任何敏感信号时,进程通过 wait 语句启动。
+
+1、进程在敏感信号发生变化时被激活,在使用了敏感表的进程中不能含wait语句; 
+2、在同一进程中对同一信号多次赋值,只有最后一次生效;
+3、在不同进程中,不可对同一信号进行赋值;一个进程不可同时对时钟上、下沿敏感。
+
+#########################################################################
+
+元件例化语句(先定义元件体，再建立例化对象)	@@@@@@@@@@@@@@@元件例化类似于verilog中的结构化描述
+
+Component 元件名
+	port (端口名表);
+End component 元件名;
+例化名:元件名 port map ( [元件端口名=>]连接端口名 , ...);
+##################################################元件例化的例子：：：：
+ARCHITECTURE ord41behv OF ord41 IS
+BEGIN
+COMPONENT nd2
+PORT( a, b: IN Std_Logic;
+c: out std_logic);
+End COMPONENT;
+SIGNAL x, y: STD_LOGIC;
+BEGIN
+u1:nd2 PORT MAP( a1, b1, x);
+u2:nd2 PORT MAP( a=>c1, c=>y, b=>d1);
+u3:nd2 PORT MAP( x, y, c=>z1);
+END;
+
+####################################################################################
+
+顺序语句
+
+	赋值语句	<=signal 赋值， :=对 variable 赋值
+	流程控制语句	if;-elsif;-else;-end if; 	
+			case 表达式 is when *** =>  **=>** (**<=**) ;.....when others=>***;end case;
+			
+			[LOOP 标号:]FOR 循环变量 IN 循环次数范围 LOOP
+			顺序语句
+ 			END LOOP [LOOP 标号];
+
+			NEXT [循环标号] [WHEN 条件];	在有条件或无条件的时候跳到指定loop或开始本loop的下一次循环（ continue ）
+			EXIT [循环标号] [WHEN 条件];
+
+
+
+	空操作语句	null
+	等待语句	wait on(信号表)
+			wait until 条件 
+			wait for 时间
+	子程序调用语句
+	返回语句
+

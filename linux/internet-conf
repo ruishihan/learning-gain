@@ -1,0 +1,46 @@
+########ifconfig维护网络接口
+ifconfig eth0
+ifconfig -a
+ifconfig eth0 IPADDRESS
+
+ifconfig [网络设备] [参数]
+参数：
+address 为网卡设置IPv4地址
+-broadcast<地址> 为指定网卡设置广播协议
+-a 显示全部接口信息
+-s 显示摘要信息（类似于 netstat -i）
+add 给指定网卡配置IPv6地址
+del 删除指定网卡的IPv6地址
+mtu<字节数> 设置网卡的最大传输单元 (bytes)
+netmask<子网掩码> 设置网卡的子网掩码
+
+
+up
+down
+
+
+arp	设置指定网卡是否支持ARP协议
+-promisc 设置是否支持网卡的promiscuous模式，如果选择此参数，网卡将接收网络中发给它所有的数据包
+-allmulti 设置是否支持多播模式，如果选择此参数，网卡将接收网络中所有的多播数据包
+tunel 建立隧道
+dstaddr 设定一个远端地址，建立点对点通信
+-pointtopoint<地址> 为网卡设置点对点通讯协议
+multicast 为网卡设置组播标志
+txqueuelen<长度> 为网卡设置传输列队的长度
+
+
+########netstat监控网络状态
+netstat
+参数
+-a
+-t	只显示于TCP协议有关的状态信息
+-u	UDP
+-w	原始套接字
+-i	显示网络界面信息表单，借以确定系统发送和接收的分组数据的数量
+-r	显示本地主机维护的路由信息
+########ping命令测试远程主机的连通性
+########ping命令检测网络主机的性能
+########ftp命令检测网络主机的传输性能
+########traceroute命令跟踪路由信息
+
+########tcpdump捕捉、分析网络分组数据

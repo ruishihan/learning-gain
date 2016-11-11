@@ -1,0 +1,68 @@
+echo [选项][输出内容]
+选项：
+-e 支持\a(输出警告因) \b（退格键） \n \r（回车） \t（tab） \v(垂直制表符) \onnn（八进制输出nnn） \xhhh（十六进制输出hhh）
+    \e[1;31m************\e[0m   红色输出****终止颜色
+
+alias-----显示已经存在的别名
+
+alias 别名='命令名' ----------临时
+永久生效：写入环境变量配置文件～/.bashrc(/root    /home/hrs)
+
+unalias
+
+
+
+命令生效顺序
+第一顺位执行绝对路径
+第二顺位执行别名
+第三顺位bash命令
+第四顺位执行$PATH路径下找到的第一个命令
+
+
+常用快捷键：
+ctrl+c 强制终止
+ctrl+l 清屏
+ctrl+a 光标移动到行首
+ctrl+e 光标移动到行尾
+ctrl+u 删除所在行
+ctrl+z 把命令放入后台
+ctrl+r 在历史命令中搜索 
+ctrl+
+
+退出与出口状态
+eixt[n]		$?变量表示执行的最后一条指令的出口状态
+
+位置参数 $0是文件名	$1是第一个实际参数	${10}	$#	参数的数量
+shift命令使得参数左移一位，但是$0不变。
+
+特殊变量替换：
+${var:-value}
+${var:+value}
+${var:=value}
+${var-value}
+${var+value}
+${var=value}
+有:时检查var是否被设置且检查var是否为null；没有时只检查是否被设置
+
+${var#pattern}	从变量值的前面删除与给定模式相匹配的最短或最长子串
+${var##pattern}
+${var%pattern}	从变量值的后面删除与指定模式相匹配的最短或最长子串
+${var%%pattern}
+
+变量声明与类型定义
+typeset
+declare	-a 把指定的变量定义为数组变量	-f 声明一个函数	-i 整数类型	-r 定义为只读变量	-x 公布指定的变量，以便其他命令或shell脚本能够继续使用
+
+exec
+let	(())	进行整数算术运算 或 返回算术表达式的出口状态
+kill
+jobs
+read	键盘输入到指定变量	-a	-d	-e	-s	-t   	-u（从指定文件输入）	-p(加提示字符串)	-n nchars(读取指定数量的字符			)
+source	相当于.
+trap	????????
+umask
+set	set value1 value2 ……(从$1开始一一赋值)	set --表示所有位置变量
+unset
+
+命令替换
+$(command)	`command`	用于获取命令的输出
